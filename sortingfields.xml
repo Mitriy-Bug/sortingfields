@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="0.9" group="content" method="upgrade">
+	<name>Сортировка материалов по дополнительным полям Joomla</name>
+	<creationDate>10/03/2024</creationDate>
+	<author>Dmitry Denisov</author>
+	<authorEmail>info@codersite.ru</authorEmail>
+	<authorUrl>https://codersite.ru</authorUrl>
+	<copyright>(C) 2024 codersite.ru. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<version>0.9</version>
+	<description>
+		Плагин берет значение дополнительного поля и записывает в поле ordering материала.
+		Для сортировки по ordering в пункте меню выставляем "Порядок материалов" в значение "Порядок материалов" или "материалы в обратном порядке"
+
+	</description>
+
+	<files>
+		<filename plugin="sortingfields">sortingfields.php</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="categorysorting"
+						type="category"
+						extension="com_content"
+						label="Выберите категорию"
+						description="Категория в которой менять ordering"
+				/>
+				<field
+						name="idfield"
+						type="number"
+						default="0"
+						label="ID пользовательского поля"
+						description="Поле должно содержать целые цифры, иначе будет ошибка"
+						min="1" step="1"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	</extension>
